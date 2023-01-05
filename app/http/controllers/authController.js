@@ -9,6 +9,14 @@ function authController() {
         },
 
         postLogin(req, res, next) {
+            const { email, password } = req.body;
+
+            //Vaidate request
+            if (!email || !password) {
+                req.flash('error', 'All fields are required!');
+                return res.redirect('/login');
+            }
+
             passport.authenticate('local', (error, user, info) => {
                 if (error) {
                     req.flash('error', info.message);
