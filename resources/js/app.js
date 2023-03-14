@@ -65,7 +65,7 @@ function updateStatus(order) {
         let dataProp= status.dataset.status;
         if(dataProp === order.status) {
             stepCompleted= false;
-            time.innerText= moment(order.updatedAt).format('hh:mm: A');
+            time.innerText= moment(order.updatedAt).format('hh:mm: a');
             status.appendChild(time);
             if(status.nextElementSibling)
             {

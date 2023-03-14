@@ -14,7 +14,7 @@ const PORT= process.env.port || 3000;
 
 
 //Database connection
-const url= 'mongodb://127.0.0.1:27017/ffp';
+const url= "mongodb://127.0.0.1:27017/ffp";
 const connection= mongoose.connect;
 connection(url, {
     useNewUrlParser: true,
@@ -71,6 +71,9 @@ app.set('view engine', 'ejs');
 
 //Routes
 require('./routes/web')(app);
+app.use((req, res)=> {
+    res.status(404).render('errors/404.ejs');
+})
 
 
 const server= app.listen(PORT, ()=> {

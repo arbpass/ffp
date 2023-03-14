@@ -140,7 +140,7 @@ function updateStatus(order) {
     var dataProp = status.dataset.status;
     if (dataProp === order.status) {
       stepCompleted = false;
-      time.innerText = moment__WEBPACK_IMPORTED_MODULE_2___default()(order.updatedAt).format('hh:mm: A');
+      time.innerText = moment__WEBPACK_IMPORTED_MODULE_2___default()(order.updatedAt).format('hh:mm: a');
       status.appendChild(time);
       if (status.nextElementSibling) {
         status.nextElementSibling.classList.add('current');
